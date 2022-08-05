@@ -1,0 +1,42 @@
+{
+    "version": "2",
+    "templates": [
+        {
+            "title": "AdGuard Home",
+            "name": "adguard-home",
+            "image": "adguard/adguardhome",
+            "platform": "linux",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "81:81/tcp",
+                "1443:443/tcp",
+                "180:80/tcp",
+                "53:53/tcp",
+                "53:53/udp",
+                "1443:443/udp",
+                "5443:5443/tcp",
+                "5443:5443/udp",
+                "853:853/tcp",
+                "3000:3000/tcp",
+                "853:853/udp",
+                "784:784/udp",
+                "67:67/udp",
+                "68:68/udp",
+                "8853:8853/udp"
+            ],
+            "volumes": [
+                {
+                    "container": "/opt/adguardhome/work",
+                    "bind": "!config/adguardhome/work"
+                },
+                {
+                    "container": "/opt/adguardhome/conf",
+                    "bind": "!config/adguardhome/conf"
+                }
+            ],
+            "logo": "https://avatars.githubusercontent.com/u/8361145?s=200&v=4",
+            "network_mode": "bridge",
+            "type": 1
+        }
+    ]
+}

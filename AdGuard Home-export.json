@@ -1,0 +1,127 @@
+{
+  "title": "AdGuard Home",
+  "containers": [
+    {
+      "title": "AdGuard Home",
+      "name": "adguard-home",
+      "image": "adguard/adguardhome",
+      "description": "",
+      "categories": [],
+      "platform": "linux",
+      "note": "",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "label": "WebUI",
+          "hport": "81",
+          "cport": "81",
+          "proto": "tcp"
+        },
+        {
+          "label": "HTTPS",
+          "hport": "1443",
+          "cport": "443",
+          "proto": "tcp"
+        },
+        {
+          "label": "HTTP",
+          "hport": "180",
+          "cport": "80",
+          "proto": "tcp"
+        },
+        {
+          "label": "DNS",
+          "hport": "53",
+          "cport": "53",
+          "proto": "tcp"
+        },
+        {
+          "label": "DNS",
+          "hport": "53",
+          "cport": "53",
+          "proto": "udp"
+        },
+        {
+          "label": "HTTPS",
+          "hport": "1443",
+          "cport": "443",
+          "proto": "udp"
+        },
+        {
+          "label": "",
+          "hport": "5443",
+          "cport": "5443",
+          "proto": "tcp"
+        },
+        {
+          "label": "",
+          "hport": "5443",
+          "cport": "5443",
+          "proto": "udp"
+        },
+        {
+          "label": "",
+          "hport": "853",
+          "cport": "853",
+          "proto": "tcp"
+        },
+        {
+          "label": "",
+          "hport": "3000",
+          "cport": "3000",
+          "proto": "tcp"
+        },
+        {
+          "label": "",
+          "hport": "853",
+          "cport": "853",
+          "proto": "udp"
+        },
+        {
+          "label": "",
+          "hport": "784",
+          "cport": "784",
+          "proto": "udp"
+        },
+        {
+          "label": "",
+          "hport": "67",
+          "cport": "67",
+          "proto": "udp"
+        },
+        {
+          "label": "",
+          "hport": "68",
+          "cport": "68",
+          "proto": "udp"
+        },
+        {
+          "label": "",
+          "hport": "8853",
+          "cport": "8853",
+          "proto": "udp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/opt/adguardhome/work",
+          "bind": "!config/adguardhome/work",
+          "variable": "Work Directory"
+        },
+        {
+          "container": "/opt/adguardhome/conf",
+          "bind": "!config/adguardhome/conf",
+          "variable": "Config Directory"
+        }
+      ],
+      "env": [],
+      "command": [],
+      "devices": [],
+      "labels": [],
+      "sysctls": [],
+      "cap_add": [],
+      "logo": "https://avatars.githubusercontent.com/u/8361145?s=200&v=4",
+      "network_mode": "bridge"
+    }
+  ]
+}
